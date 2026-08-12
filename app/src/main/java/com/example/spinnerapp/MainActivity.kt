@@ -61,8 +61,12 @@ class MainActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
-                val  intent = Intent(Intent.ACTION_VIEW,"https://www.google.com/search?q=${data[p2]}".toUri())
-                startActivity(intent)
+                if (first==0){
+                    first =1
+                }else{
+                    val  intent = Intent(Intent.ACTION_VIEW,"https://www.google.com/search?q=${data[p2]}".toUri())
+                    startActivity(intent)
+                }
 
             }
 
